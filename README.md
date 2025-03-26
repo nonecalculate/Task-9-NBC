@@ -66,3 +66,12 @@ SR_SubmitChat 이라는 Custom Event 에서는 ChatPanel 에서 받은 메시지
 Submit Chat 은 서버에서 실행, Update Chat 과 CheckGoal 은 모두 소유중인 클라이언트에서 실행 이다. (신뢰성은 모두체크되어있음.) 
 
 C++ 로 작성한 것은 블루프린트 클래스 두 개 (CheckScore 과 GenerateRandomNumber) 와 플레이어 스테이트 변수 등 이 있습니다. 자세한 것은 프로젝트 안의 내용을 살펴주세요.
+
+플레이 사진
+
+![image](https://github.com/user-attachments/assets/d9d780d7-fcc7-4e55-babb-837510430a98)
+
+
+
+
+아직 Print String 으로 결과를 보여주기에 이를 수정할 계획이 있습니다. 따로 위젯 블루프린트를 제작해 Server 에서 보내는 메시지를 구성해야 할 것 같습니다.
