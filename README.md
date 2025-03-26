@@ -30,4 +30,39 @@ For Each Roop 를 통해 Strike, Ball, Out 의 갯수를 확인한 뒤 이를 Pr
 
 위젯
 -> ChatPanel 과 ChatMessage 라는 두개의 위젯 블루프린트 생성. ChatPanel 은 플레이어가 입력하기 위한 대화창 및 대화 저장공간이고 ChatMessage 는 저장될 채팅 메시지의 폰트, 크기를 담당.
-![image](https://github.com/user-attachments/assets/0e7bc12b-1498-4b56-be2d-2652a46296ab)
+
+ChatPanel 에서 플레이어가 메시지를 입력하면 Chat Message 에 플레이어 이름과 메시지를 전달해 주는 방향.
+
+![image](https://github.com/user-attachments/assets/cefb70c0-445b-49b2-9891-d2f676e8c675)
+
+다른 플레이어가 보낸 채팅은 컨트롤러를 거쳐 도착함.
+![image](https://github.com/user-attachments/assets/87cce0bf-3e00-4423-a208-7428fb6db13a)
+
+ChatMessage 는 아래와 같은 모습
+![image](https://github.com/user-attachments/assets/5a50546c-54b4-440f-8845-f99b6b856146)
+
+ChatPanel 과 ChatMessage 의 디자이너
+![image](https://github.com/user-attachments/assets/1f98950d-ae31-4fd8-a0dc-45d45ae08828)
+
+![image](https://github.com/user-attachments/assets/cbc435e0-861a-485f-843c-bd41083be640)
+
+플레이어 컨트롤러
+-> 로컬 플레이어 컨트롤러인지 검사 후 True 라면 ChatPanel 위젯을 생성 후 Add ViewPort
+![image](https://github.com/user-attachments/assets/d09e206e-9b9d-40f6-a9ba-ed43b71a1462)
+
+Enter 로 ChatPanel 에 키보드가 Focus 가능하게 기능
+![image](https://github.com/user-attachments/assets/3f159f92-1a67-4809-afb0-905536271ecb)
+
+SR_SubmitChat 이라는 Custom Event 에서는 ChatPanel 에서 받은 메시지와 플레이어 이름을 토대로 모든 컨트롤러의 ChatPanel 에 업데이트 해준다.
+![image](https://github.com/user-attachments/assets/0515f145-71a6-49be-a2bf-1669ca78175a)
+
+(이부분이 제일 아쉬운데 서버에서 BroadCast 할 수 있게 만들어야겠습니다.)
+
+
+다음은 받은 채팅을 업데이트 하기 위한 Custom Event 와 GameMode(서버) 에 보낼 답안 메시지 커스텀 이벤트이다.
+![image](https://github.com/user-attachments/assets/808c7dd1-e078-4251-8a65-360198c74c19)
+
+
+Submit Chat 은 서버에서 실행, Update Chat 과 CheckGoal 은 모두 소유중인 클라이언트에서 실행 이다. (신뢰성은 모두체크되어있음.) 
+
+C++ 로 작성한 것은 블루프린트 클래스 두 개 (CheckScore 과 GenerateRandomNumber) 와 플레이어 스테이트 변수 등 이 있습니다. 자세한 것은 프로젝트 안의 내용을 살펴주세요.
