@@ -1,0 +1,7 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\x64\\UnrealGame\\Development\\DarkandDarker_Status\\Module.DarkandDarker_Status.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\DarkandDarker_Status\\DarkandDarker_Status.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Development\\DarkandDarker_Status\\DarkandDarker_StatusBPLibrary.cpp.obj"
+	]
+}
